@@ -1,0 +1,30 @@
+{
+  "name": "no-captcha",
+  "version": "1.0.0",
+  "description": "Display and verify of Google No Captcha reCaptcha Node implementation",
+  "main": "./lib/index.js",
+  "scripts": {
+    "prepublish": "make",
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:msyrus/No-Captcha.git"
+  },
+  "keywords": [
+    "Node",
+    "Google",
+    "NoCaptcha",
+    "reCaptcha",
+    "Captcha"
+  ],
+  "author": "msyrus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msyrus/No-Captcha/issues"
+  },
+  "homepage": "https://github.com/msyrus/No-Captcha",
+  "dependencies": {
+    "underscore": "^1.7.0"
+  }
+}
