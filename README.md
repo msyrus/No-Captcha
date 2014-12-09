@@ -2,6 +2,9 @@
 
 No-Captcha is a Node implementation for [Google No Captcha reCaptcha](https://developers.google.com/recaptcha/)
 
+## Installation
+	$ npm install no-captcha
+
 ## Usage
 
 ```js
