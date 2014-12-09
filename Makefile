@@ -1,3 +1,5 @@
+PATH := ./node_modules/.bin:${PATH}
+
 all: lib/index.js
 
 clean:

@@ -4,7 +4,6 @@
   "description": "Display and verify of Google No Captcha reCaptcha Node implementation",
   "main": "./lib/index.js",
   "scripts": {
-    "prepublish": "make",
     "test": "make test"
   },
   "repository": {
@@ -18,8 +17,8 @@
     "reCaptcha",
     "Captcha"
   ],
-  "author": "msyrus",
-  "license": "ISC",
+  "author": "Minhaz Ahmed Syrus <hello@msyr.us>",
+  "license": "FreeBSD",
   "bugs": {
     "url": "https://github.com/msyrus/No-Captcha/issues"
   },
