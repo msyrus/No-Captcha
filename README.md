@@ -35,7 +35,7 @@ You can also pass an optional option object to toHTML() method
 ```js
 data = {
 	response: req.body['g-recaptcha-response'],
-	remoteip: req.connection.remoteAddress
+	remoteip: req.connection.remoteAddress			// Optional
 };
 
 noCaptcha.verify(data, function(err, resp){
