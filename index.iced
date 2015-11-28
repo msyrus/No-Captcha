@@ -16,15 +16,21 @@ module.exports = exports = class NoCaptcha
 		div = "<div class='g-recaptcha' data-sitekey='#{@PUBLIC_KEY}'"
 
 		if options?
-			external = querystring.stringify _.pick options, ['onload', 'render', 'hl']			
+			external = querystring.stringify _.pick options, ['onload', 'render', 'hl']
 			script_src = script_src+'?'+external
 
 			if options.theme is 'dark' or options.theme is 'light'
 				div = div+" data-theme='#{options.theme}'"
 			if options.type is 'audio' or options.type is 'image'
 				div = div+" data-type='#{options.type}'"
+			if options.size is 'normal' or options.size is 'compact'
+				div = div+" data-size='#{options.size}'"
+			if options.tabindex
+				div = div+" data-tabindex='#{options.tabindex}'"
 			if options.callback
 				div = div+" data-callback='#{options.callback}'"
+			if options["expired-callback"]
+				div = div+" data-expired-callback='"+options["expired-callback"]+"'"
 
 		div = div + "></div>"
 		script = "<script src='#{script_src}' async defer></script>"
@@ -38,13 +44,14 @@ module.exports = exports = class NoCaptcha
 		if not response?
 			return callback new Error 'No response'
 
-		if not remoteip?
-			return callback new Error 'No remote IP'
-
-		external = querystring.stringify
+		externalObj =
 			secret: @PRIVATE_KEY
 			response: response
-			remoteip: remoteip
+
+		if remoteip
+			externalObj["remoteip"] = remoteip
+
+		external = querystring.stringify externalObj
 
 		reqOption = {
 			host: 'www.google.com'
@@ -66,12 +73,3 @@ module.exports = exports = class NoCaptcha
 		)
 		.on 'error', (err)->
 			return callback err
-
-
-
-
-
-
-
-
-	

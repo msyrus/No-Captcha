@@ -20,13 +20,15 @@ noCaptcha.toHTML()
 ```
 
 You can also pass an optional option object to toHTML() method
-+ **onload** method to call after loading CAPTCHA
++ **onload** method name to call after loading CAPTCHA
 + **render** explicit | onload
 + **hl** Language [code](https://developers.google.com/recaptcha/docs/language)
 + **theme** dark | light default 'light'
 + **type** text | audio default 'text'
-+ **callback** callback method that's executed when the user submits a successful CAPTCHA response.
-
++ **size** normal | compact default 'normal'
++ **tabindex** default 0
++ **callback** callback method name that's executed when the user submits a successful CAPTCHA response.
++ **expired-callback** callback method name that's executed when the recaptcha response expires and the user needs to solve a new CAPTCHA.
 ### To verify
 
 ```js
