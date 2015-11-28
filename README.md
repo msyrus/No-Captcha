@@ -29,6 +29,7 @@ You can also pass an optional option object to toHTML() method
 + **tabindex** default 0
 + **callback** callback method name that's executed when the user submits a successful CAPTCHA response.
 + **expired-callback** callback method name that's executed when the recaptcha response expires and the user needs to solve a new CAPTCHA.
+
 ### To verify
 
 ```js
