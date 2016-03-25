@@ -1,4 +1,3 @@
-_ = require 'underscore'
 https = require 'https'
 querystring = require 'querystring'
 
@@ -16,7 +15,14 @@ module.exports = exports = class NoCaptcha
 		div = "<div class='g-recaptcha' data-sitekey='#{@PUBLIC_KEY}'"
 
 		if options?
-			external = querystring.stringify _.pick options, ['onload', 'render', 'hl']
+			exOptions = {}
+			if options.onload
+				exOptions.options = options.onload
+			if options.render
+				exOptions.options = options.render
+			if options.hl
+				exOptions.options = options.hl
+			external = querystring.stringify exOptions
 			script_src = script_src+'?'+external
 
 			if options.theme is 'dark' or options.theme is 'light'

@@ -1,6 +1,6 @@
 {
   "name": "no-captcha",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Display and verify of Google No Captcha reCaptcha Node implementation",
   "main": "./lib/index.js",
   "scripts": {
@@ -23,7 +23,5 @@
     "url": "https://github.com/msyrus/No-Captcha/issues"
   },
   "homepage": "https://github.com/msyrus/No-Captcha",
-  "dependencies": {
-    "underscore": "1.8.3"
-  }
+  "dependencies": {}
 }
